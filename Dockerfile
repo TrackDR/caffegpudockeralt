@@ -21,6 +21,9 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-numpy \
   python-scipy \
+  python-skimage \
+  python-protobuf \
+  python-yaml \
   libopencv-dev
 
 # Clone Caffe repo and move into it
