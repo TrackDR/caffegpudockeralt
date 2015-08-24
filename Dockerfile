@@ -26,11 +26,19 @@ RUN apt-get update && apt-get install -y \
   python-yaml \
   libopencv-dev
 
+# Copy cudnn libraries into docker file
+#COPY cudnn/cudnn-6.5-linux-x64-v2/libcudnn.so /usr/local/cuda/lib64/libcudnn.so
+#COPY cudnn/cudnn-6.5-linux-x64-v2/libcudnn.so.6.5 /usr/local/cuda/lib64/libcudnn.so.6.5
+#COPY cudnn/cudnn-6.5-linux-x64-v2/libcudnn.so.6.5.48 /usr/local/cuda/lib64/libcudnn.so.6.5.48
+#COPY cudnn/cudnn-6.5-linux-x64-v2/cudnn.h /usr/local/cuda/include/cudnn.h
+#COPY cuda_7.0.28_linux.run /cuda_7.0.28_linux.run
+
 # Clone Caffe repo and move into it
 RUN cd /opt && git clone https://github.com/BVLC/caffe.git && cd caffe
 RUN cd /opt/caffe/python && for req in $(cat requirements.txt); do pip install $req; done
 RUN cd /opt/caffe && cp Makefile.config.example Makefile.config
 RUN cd /opt/caffe && sed -i '/^# WITH_PYTHON_LAYER := 1/s/^# //' Makefile.config
+#RUN cd /opt/caffe && sed -i '/^# USE_CUDNN := 1/s/^# //' Makefile.config
 RUN cd /opt/caffe && make all
 RUN cd /opt/caffe && make pycaffe
 RUN cd /opt/caffe && make test
