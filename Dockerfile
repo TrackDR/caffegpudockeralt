@@ -33,6 +33,11 @@ RUN apt-get update && apt-get install -y \
 #COPY cudnn/cudnn-6.5-linux-x64-v2/cudnn.h /usr/local/cuda/include/cudnn.h
 #COPY cuda_7.0.28_linux.run /cuda_7.0.28_linux.run
 
+#WORKDIR /
+#RUN ./cuda_7.0.28_linux.run -extract=$PWD
+#RUN ./cuda-samples-linux-*.run -noprompt
+#RUN cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery && make
+
 # Clone Caffe repo and move into it
 RUN cd /opt && git clone https://github.com/BVLC/caffe.git && cd caffe
 RUN cd /opt/caffe/python && for req in $(cat requirements.txt); do pip install $req; done
