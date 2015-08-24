@@ -13,7 +13,7 @@ sudo docker pull trackdr/caffegpudockerALT; cd /usr/local/cuda-7.0/samples/1_Uti
 Download samples for cuda:
 
 wget http://developer.download.nvidia.com/compute/cuda/7_0/Prod/local_installers/cuda_7.0.28_linux.run;
-chmod +x cuda_7.0.28_linux.run; ./cuda_linux.run -extract=pwd; ./cuda-samples-linux-*.run -noprompt; cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery; make; ../../bin/x86_64/linux/release/deviceQuery
+chmod +x cuda_7.0.28_linux.run; ./cuda_7.0.28_linux.run -extract=pwd; ./cuda-samples-linux-*.run -noprompt; cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery; make; ../../bin/x86_64/linux/release/deviceQuery
 
 cd /opt/caffe; make runtest
 
