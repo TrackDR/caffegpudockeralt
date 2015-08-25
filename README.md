@@ -11,7 +11,8 @@ Run docker instance:
 sudo docker pull trackdr/caffegpudockeralt; cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery; make; /home/ubuntu/NVIDIA_CUDA-7.0_Samples/bin/x86_64/linux/release/deviceQuery; DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm"; sudo docker run -ti $DOCKER_NVIDIA_DEVICES trackdr/gpucaffedockeralt /bin/bash; sudo docker ps
 
 OR Build docker instance:
-# pull this repo
+
+pull this repository;
 sudo docker build caffegpudockeralt;
 cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery; 
 make; 
