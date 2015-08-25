@@ -12,7 +12,7 @@ sudo docker pull trackdr/caffegpudockeralt; cd /usr/local/cuda-7.0/samples/1_Uti
 
 OR Build docker instance and run docker instance:
 
-pull this repository;
+git clone https://github.com/TrackDR/caffegpudockeralt;
 sudo docker build caffegpudockeralt;
 cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery; 
 make; 
