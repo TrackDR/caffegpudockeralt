@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 #COPY cuda_7.0.28_linux.run /cuda_7.0.28_linux.run
 
 #WORKDIR /
-#RUN ./cuda_7.0.28_linux.run -extract=$PWD
+#RUN ./cuda_7.0.28_linux.run -extract=`pwd`
 #RUN ./cuda-samples-linux-*.run -noprompt
 #RUN cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery && make
 
